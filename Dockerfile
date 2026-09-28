@@ -1,13 +1,18 @@
 FROM php:8.2-apache
 
-# Copiar os ficheiros do projeto para o diretório do Apache
+# Instalar extensões necessárias (como PDO para a base de dados)
+RUN docker-php-ext-install pdo pdo_mysql
+
+# Copiar os ficheiros do projeto para a pasta web do Apache
 COPY . /var/www/html/
 
-# Mudar a raiz do Apache (DocumentRoot) para a pasta public do projeto
+# Configurar o Apache para usar a pasta public como raiz do site
 RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
 RUN sed -i 's!/var/www/!/var/www/html/public!g' /etc/apache2/apache2.conf
 
-# Dar permissões e ativar mod_rewrite se necessário
-RUN docker-php-ext-install pdo pdo_mysql
+# Fazer o Apache escutar na porta dinâmica do Railway ($PORT)
+RUN sed -i 's/Listen 80/Listen ${PORT}/g' /etc/apache2/ports.conf
+RUN sed -i 's/:80/:${PORT}/g' /etc/apache2/sites-available/000-default.conf
 
-EXPOSE 80
+# Ativar mod_rewrite para amigabilidade de URLs se necessário
+RUN a2enmod rewrite
