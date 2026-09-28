@@ -1,0 +1,296 @@
+ body { background-color: #f4f5f7; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; color: #444; overflow-x: hidden; }
+        
+        .top-notice { background-color: #f15a5a; color: #fff; padding: 6px; font-size: 11px; text-align: center; }
+        .top-header { background: #fff; border-bottom: 1px solid #eee; padding: 8px 0; font-size: 11px; color: #777; }
+        .top-header a { color: #666; text-decoration: none; margin-left: 12px; }
+        .top-header a:hover { color: #f15a5a; }
+
+        .main-header { background: #fff; padding: 20px 0; border-bottom: 1px solid #e5e5e5; }
+        .journal-logo { font-size: 28px; font-weight: 900; letter-spacing: -1px; color: #222; text-decoration: none; line-height: 1; }
+        .journal-logo span { font-size: 10px; display: block; letter-spacing: 2px; color: #888; font-weight: 400; margin-top: 2px; }
+
+        .search-box { display: flex; align-items: center; width: 100%; max-width: 300px; }
+        .search-input { border: 1px solid #e1e1e1; border-right: none; border-radius: 0; padding: 8px 12px; font-size: 12px; width: 100%; }
+        .search-btn { background: #fff; border: 1px solid #e1e1e1; border-left: none; padding: 8px 12px; color: #666; }
+
+        .cart-btn { background-color: #f15a5a; color: #fff; font-weight: bold; border: none; padding: 9px 18px; border-radius: 2px; text-decoration: none; display: inline-block; font-size: 13px; white-space: nowrap; }
+        .cart-btn:hover { background-color: #d94343; color: #fff; }
+
+        .categories-container {
+    position: relative;
+    width: 100%;
+
+      top-notice { background-color: #f15a5a; color: #fff; padding: 6px; font-size: 11px; text-align: center; }
+        .top-header { background: #fff; border-bottom: 1px solid #eee; padding: 8px 0; font-size: 11px; color: #777; }
+        .top-header a { color: #666; text-decoration: none; margin-left: 12px; }
+        .main-header { background: #fff; padding: 20px 0; border-bottom: 1px solid #e5e5e5; }
+        .journal-logo { font-size: 28px; font-weight: 900; letter-spacing: -1px; color: #222; text-decoration: none; line-height: 1; }
+        .journal-logo span { font-size: 10px; display: block; letter-spacing: 2px; color: #888; font-weight: 400; margin-top: 2px; }
+        .product-detail-card { background: #fff; border: 1px solid #e5e5e5; border-radius: 4px; padding: 30px; }
+        .product-main-img { width: 100%; height: 380px; object-fit: cover; border-radius: 4px; border: 1px solid #eee; }
+        .product-price-lg { font-size: 28px; font-weight: 800; color: #f15a5a; margin-bottom: 20px; }
+        .btn-add-cart { background-color: #f15a5a; color: #fff; font-weight: bold; text-transform: uppercase; padding: 12px 25px; border: none; border-radius: 2px; }
+        .btn-add-cart:hover { background-color: #d94343; color: #fff; }      
+            
+
+}
+
+/* Estilo do menu com scroll horizontal escondido */
+.nav-journal {
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth; /* Faz a rolagem deslizar suavemente */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.nav-journal::-webkit-scrollbar {
+    display: none;
+}
+
+/* Setas de navegação lateral (escondidas por defeito em PC) */
+.category-arrow {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.category-prev {
+    left: 5px;
+}
+
+.category-next {
+    right: 5px;
+}
+
+        /* Carrossel de Banners Limpo (Sem Sobreposição) */
+        .hero-slider-container { position: relative; width: 100%; margin-bottom: 30px; }
+        .hero-banner-clean {
+            width: 100%;
+            height: 420px;
+            background-size: contain; /* Mostra a imagem inteira sem cortar */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #f8f9fa; /* Cor de fundo para as bordas que sobrarem */
+}
+
+        /* Setas do Carrossel */
+        .carousel-control-prev, .carousel-control-next {
+            width: 45px; height: 45px; background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%; top: 50%; transform: translateY(-50%); opacity: 0.9; z-index: 10;
+        }
+        .carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    background-image: none !important; /* Se estiver a usar ícones do Bootstrap, garante que remove o fundo padrão se houver */
+}
+
+/* Se as setas forem elementos HTML personalizados (como botões com fundo circular) */
+.carousel-control-prev,
+.carousel-control-next {
+    background: transparent !important;
+    border: none !important;
+    width: 5%; /* Ajusta a área de clique para não invadir o banner todo */
+}
+
+/* Caso a "bola" seja gerada por classes de fundo do Bootstrap (como .rounded-circle ou background translúcido) */
+.carousel-control-prev span,
+.carousel-control-next span {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+        .product-card { background: #fff; border: 1px solid #e5e5e5; border-radius: 2px; padding: 15px; margin-bottom: 20px; text-align: center; }
+.product-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+
+/* Alterado de 'cover' para 'contain' */
+.product-img { 
+    width: 100%; 
+    height: 160px; 
+    object-fit: contain; /* Mostra a imagem inteira sem cortar */
+    background-color: #fff; /* Fundo limpo caso a imagem tenha proporções diferentes */
+    margin-bottom: 15px; 
+}
+
+.product-title { font-size: 13px; font-weight: 700; color: #333; text-decoration: none; display: block; margin-bottom: 8px; height: 36px; overflow: hidden; }
+.product-price { font-size: 16px; font-weight: 800; color: #f15a5a; margin-bottom: 12px; }
+
+/* Remove o fundo branco das bordas do banner no modo escuro */
+body.dark-mode .hero-banner-clean {
+    background-color: #18191a !important; /* Cor idêntica ao fundo do cabeçalho */
+}
+
+/* Se o banner for uma tag <img> diretamente, podemos escurecer o fundo do container dele */
+body.dark-mode .hero-slider-container {
+    background-color: #18191a !important;
+}
+        @media (max-width: 768px) {
+            .main-header .container { flex-direction: column; gap: 15px; align-items: stretch !important; }
+            .search-box { max-width: 100%; }
+            .cart-btn { width: 100%; text-align: center; }
+            .hero-banner-clean { height: 280px; }
+
+            .main-header .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px; /* Espaço organizado entre o logo, a barra de pesquisa e o carrinho se estiverem no mesmo bloco */
+    }
+
+    .main-header .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .journal-logo {
+        text-align: center;
+        display: inline-block;
+    }
+
+    /* Faz a barra de pesquisa ocupar 100% da largura disponível no telemóvel */
+    .search-box {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+}
+
+            .top-header .container {
+        flex-direction: column; /* Empilha os blocos (esquerda e direita) um abaixo do outro */
+        text-align: center;
+        gap: 6px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .top-header div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Reduz um pouco os espaçamentos e textos em telemóveis para caber tudo limpo */
+    .top-header a {
+        margin: 2px 6px !important;
+        font-size: 10px;
+    }
+    
+    .top-header span {
+        display: none; /* Opcional: esconde o texto 'Bem-vindo...' no telemóvel para poupar espaço valioso */
+    }
+
+    .nav-journal-wrapper {
+    width: 100% !important;
+    background-color: #18191a;
+    border-bottom: 1px solid #2d2d2d;
+    margin-bottom: 20px;
+    }   
+
+    .nav-journal {
+        justify-content: flex-start !important; /* Alinha os itens à esquerda para começar a rolagem de forma natural */
+        overflow-x: auto !important;           /* Ativa a barra de rolagem lateral */
+        white-space: nowrap !important;        /* Impede que os nomes das categorias quebrem de linha */
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;                 /* Esconde a barra de scroll no Firefox */
+    }
+
+    .nav-journal::-webkit-scrollbar {
+    display: none;
+}
+
+    /* Esconde a barra de scroll no Chrome/Safari para ficar limpo */
+    .nav-journal::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Garante um espaçamento lateral confortável entre os itens durante o scroll */
+    .nav-journal a {
+        flex-shrink: 0;
+    }
+        
+        
+        /* --- MODO ESCURO (DARK MODE) --- */
+        /* ==========================================
+   Estilos de Suporte ao Modo Escuro (Dark Mode)
+   ========================================== */
+
+   /* Torna o logótipo e o subtítulo brancos no modo escuro */
+body.dark-mode .journal-logo {
+    color: #ffffff !important;
+}
+
+body.dark-mode .journal-logo span {
+    color: #cccccc !important; /* Um cinza claro elegante para o subtítulo */
+}
+
+/* Garante que qualquer texto geral dentro do cabeçalho principal também fique branco */
+body.dark-mode .main-header {
+    color: #ffffff !important;
+}
+
+/* Fundo geral e texto do corpo no modo escuro */
+/* 1. Força o fundo da página inteira e o texto globalmente no modo escuro */
+[data-bs-theme="dark"] body {
+    background-color: #121212 !important;
+    color: #f8f9fa !important;
+}
+
+/* 2. Cabeçalhos e barras de navegação */
+[data-bs-theme="dark"] .main-header,
+[data-bs-theme="dark"] .nav-journal {
+    background-color: #18191a !important;
+    border-color: #2d2d2d !important;
+    color: #f8f9fa !important;
+}
+
+/* 3. Cards de Produtos (fundo escuro, bordas suaves e texto legível) */
+[data-bs-theme="dark"] .product-card {
+    background-color: #1e1e1e !important;
+    border: 1px solid #2d2d2d !important;
+    color: #f8f9fa !important;
+}
+
+[data-bs-theme="dark"] .product-title {
+    color: #ffffff !important;
+}
+
+[data-bs-theme="dark"] .product-price {
+    color: #ff6b6b !important; /* Um tom de vermelho/rosa mais claro para destacar no escuro */
+}
+
+/* 4. Barra de Pesquisa no Modo Escuro */
+[data-bs-theme="dark"] .search-input {
+    background-color: #2b2b2b !important;
+    border-color: #404040 !important;
+    color: #fff !important;
+}
+
+[data-bs-theme="dark"] .search-input::placeholder {
+    color: #adb5bd !important;
+}
+
+[data-bs-theme="dark"] .search-btn {
+    background-color: #333333 !important;
+    border-color: #404040 !important;
+    color: #fff !important;
+}
