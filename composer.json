@@ -1,5 +1,5 @@
 {
-    "require": {
-        "mercadopago/dx-php": "^3.16"
-    }
+    "name": "loja/virtual",
+    "type": "project",
+    "require": {}
 }
